@@ -1,4 +1,4 @@
-// Read an integer and detemrine if odd or even
+// Vector practice with temperatures, average and means
 
 #include <iostream>
 #include <string>
