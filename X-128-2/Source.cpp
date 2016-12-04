@@ -42,6 +42,10 @@ int main() {
 
 	//compute median temperature
 	sort(temps.begin(), temps.end());
+
+	// print out sorte3d temps
+	for (double t : temps) cout << t << '\n';
+
 	cout << "Median temperature: " << temps[temps.size() / 2] << '\n';
 
 	keep_window_open();
