@@ -46,7 +46,31 @@ int main() {
 	// print out sorte3d temps
 	for (double t : temps) cout << t << '\n';
 
-	cout << "Median temperature: " << temps[temps.size() / 2] << '\n';
+	cout << "Sloppy Median temperature: " << temps[temps.size() / 2] << '\n';
+
+	// Revision to handle cases where number of entries is even - based on:
+	// The formula used to find the middle number of a data set of n numbers 
+	// is (n + 1) ÷ 2. This either gives the middle number (for an odd number 
+	// of values) or the halfway point between the two middle values. 
+	// For example, with 14 values, the formula will give 7.5, and the median 
+	// will be taken by averaging the seventh and eighth values.
+
+
+	
+	if ((temps.size()+1) % 2)  // > 0 i.e., True when temp.size() is even (even number of elements
+	{
+	
+		int low_middle = temps.size() / 2 - 1;
+		
+		cout << "Median temperature (even number of elements):" <<
+			(temps[low_middle] + temps[low_middle + 1]) / 2 << '\n';
+	}
+	else
+	{
+		int middle = (temps.size() + 1) / 2 - 1;
+		
+		cout << "Median temperature (odd number of elements): " << temps[middle] << '\n';
+	}
 
 	keep_window_open();
 
